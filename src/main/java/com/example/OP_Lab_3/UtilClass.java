@@ -35,11 +35,8 @@ public class UtilClass {
 
     private static ArrayList subAction1 (ArrayList arrStart, ArrayList arrFinish, ArrayList arrStep, ArrayList superArray) {
         for(double a =(double) arrStart.get(0); a<=(double)arrFinish.get(0); a +=(double) arrStep.get(0) ) {
-            arrStart.set(0, a);
             for(double b =(double) arrStart.get(1); b<=(double)arrFinish.get(1); b +=(double) arrStep.get(1) ) {
-                arrStart.set(1, b);
                 for (double c =(double) arrStart.get(2); c<=(double)arrFinish.get(2); c +=(double) arrStep.get(2) ) {
-                    arrStart.set(2, c);
                     for(double d =(double) arrStart.get(3); d<=(double)arrFinish.get(3); d +=(double) arrStep.get(3) ) {
                         ArrayList toAdd = new ArrayList();
                         toAdd.add(a);
@@ -57,11 +54,8 @@ public class UtilClass {
 
     private static ArrayList subAction2 (ArrayList arrStart, ArrayList arrFinish, ArrayList arrStep, ArrayList superArray) {
         for(double a =(double) arrStart.get(0); a<=(double)arrFinish.get(0); a +=(double) arrStep.get(0) ) {
-            arrStart.set(0, a);
             for(double b =(double) arrStart.get(1); b<=(double)arrFinish.get(1); b +=(double) arrStep.get(1) ) {
-                arrStart.set(1, b);
                 for (double c =(double) arrStart.get(2); c<=(double)arrFinish.get(2); c +=(double) arrStep.get(2) ) {
-                    arrStart.set(2, c);
                     for(double d =(double) arrStart.get(3); d<=(double)arrFinish.get(3); d +=(double) arrStep.get(3) ) {
                         ArrayList toAdd = new ArrayList();
                         toAdd.add(a);

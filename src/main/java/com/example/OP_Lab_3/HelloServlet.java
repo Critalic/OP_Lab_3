@@ -9,9 +9,6 @@ import javax.servlet.annotation.*;
 @WebServlet(name = "helloServlet", value = "/helloServlet")
 public class HelloServlet extends HttpServlet {
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        this.doPost(request, response);
-    }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int formula;
@@ -19,6 +16,7 @@ public class HelloServlet extends HttpServlet {
         ArrayList<Double> arrStart = new ArrayList();
         ArrayList<Double> arrFinish = new ArrayList();
         ArrayList<Double> arrStep = new ArrayList();
+        HttpSession session=request.getSession();
         try { // get parameters
             arrFinish.add(Double.parseDouble(request.getParameter("aTo")));
             arrFinish.add(Double.parseDouble(request.getParameter("bTo")));
@@ -40,22 +38,25 @@ public class HelloServlet extends HttpServlet {
             superArr = myClass.action(formula);
             request.setAttribute("superList", superArr);
 
-            request.getSession().setMaxInactiveInterval(60*48*60); // set a session to save the table values
-            request.getSession().setAttribute("superList", superArr);
+            session.setMaxInactiveInterval(60*48*60); // set a session to save the table values
+            session.setAttribute("superList", superArr);
             String [] letter = {"a", "b", "c", "d"};
             for (int i = 0; i < arrFinish.size(); i++) {
-                request.getSession().setAttribute(letter[i] + "To", arrFinish.get(i));
-            }
-            for(int i=0; i<arrStart.size(); i++) {
-                request.getSession().setAttribute(letter[i] + "From", arrStart.get(i));
-            }
-            for(int i=0; i<arrStep.size(); i++) {
-                request.getSession().setAttribute(letter[i] + "Step", arrStep.get(i));
+                session.setAttribute(letter[i] + "To", arrFinish.get(i));
+
+                session.setAttribute(letter[i] + "From", arrStart.get(i));
+
+                session.setAttribute(letter[i] + "Step", arrStep.get(i));
             }
 
         } catch (NumberFormatException e) {
             ArrayList arr = new ArrayList();
             arr.add("Error");
+            arr.add("Error");
+            arr.add("Error");
+            arr.add("Error");
+            arr.add("Error");
+
             superArr.add(arr);
             request.setAttribute("superList", superArr);
         }
