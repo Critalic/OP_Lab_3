@@ -30,23 +30,7 @@
             <div>
                 <form>
                     <h1>Enter the variables</h1>
-                    <% if (list!=null) { %>
-                    a: from: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="text" name="aFrom" value="${aFrom}" />
-                    to: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="aTo" value="${aTo}" />
-                    step: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="aStep" value="${aStep}" /><br>
-
-                    b: from: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="bFrom" value="${bFrom}" />
-                    to: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="bTo" value="${bTo}" />
-                    step: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="bStep" value="${bStep}" /><br>
-
-                    c: from: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="cFrom" value="${cFrom}" />
-                    to: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="cTo" value="${cTo}" />
-                    step: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="cStep" value="${cStep}" /><br>
-
-                    d: from: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="dFrom" value="${dFrom}" />
-                    to: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="dTo" value="${dTo}" />
-                    step: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="dStep" value="${dStep}" /><br>
-                    <% }else { %>
+                    <% if (list==null || list.get(0).get(0).equals("Error")) { %>
                     a: from: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="text" name="aFrom" value="0" />
                     to: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="aTo" value="1" />
                     step: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="aStep" value="1" /><br>
@@ -62,6 +46,22 @@
                     d: from: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="dFrom" value="0" />
                     to: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="dTo" value="1" />
                     step: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="dStep" value="1" /><br>
+                    <% }else { %>
+                    a: from: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="text" name="aFrom" value="${aFrom}" />
+                    to: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="aTo" value="${aTo}" />
+                    step: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="aStep" value="${aStep}" /><br>
+
+                    b: from: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="bFrom" value="${bFrom}" />
+                    to: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="bTo" value="${bTo}" />
+                    step: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="bStep" value="${bStep}" /><br>
+
+                    c: from: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="cFrom" value="${cFrom}" />
+                    to: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="cTo" value="${cTo}" />
+                    step: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="cStep" value="${cStep}" /><br>
+
+                    d: from: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="dFrom" value="${dFrom}" />
+                    to: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="dTo" value="${dTo}" />
+                    step: <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" type="number" name="dStep" value="${dStep}" /><br>
                         <%}%>
                     <button class = "bg-blue-300 text-x1 font-semibold px-4 py-1 rounded hover:bg-blue-800 hover:text-white " type="submit">Count</button>
                 </form>

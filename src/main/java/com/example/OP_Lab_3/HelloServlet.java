@@ -12,10 +12,10 @@ public class HelloServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int formula;
-        ArrayList superArr = new ArrayList();
-        ArrayList<Double> arrStart = new ArrayList();
-        ArrayList<Double> arrFinish = new ArrayList();
-        ArrayList<Double> arrStep = new ArrayList();
+        ArrayList<ArrayList> superArr = new ArrayList<>();
+        ArrayList<Double> arrStart = new ArrayList<>();
+        ArrayList<Double> arrFinish = new ArrayList<>();
+        ArrayList<Double> arrStep = new ArrayList<>();
         HttpSession session=request.getSession();
         try { // get parameters
             arrFinish.add(Double.parseDouble(request.getParameter("aTo")));
